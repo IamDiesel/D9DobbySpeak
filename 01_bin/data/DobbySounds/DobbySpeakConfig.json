@@ -1,0 +1,11 @@
+{
+  "FolderSoundfiles":  "/data/DobbySounds/",
+  "C0": "badDobby.wav",
+  "C1": "dobbyBeat.wav",
+  "C2": "dobbyFart1.wav",
+  "C3": "glass.wav",
+  "C4": "shipHorn.wav",
+  "F0": "dobbyWee.wav",
+  "F1": "dobbyCry.wav",
+  "F2": "dobbyJumpingOnBed.wav"
+}
