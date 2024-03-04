@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: arm-linux-gnueabihf-g++.exe build active file",
+			"command": "c:\\SysGCC\\raspberry\\bin\\arm-linux-gnueabihf-g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${fileDirname}\\DobbySpeak.cpp",
+				"${fileDirname}\\CRC16.cpp",
+				"${fileDirname}\\Helper.cpp",
+				"${fileDirname}\\LTPCMessageParser.cpp",
+				"${fileDirname}\\StraceMessageParser.cpp",
+				"${fileDirname}\\TriggerMessage.cpp",
+				"${fileDirname}\\WAVPlayer.cpp",
+				//"${file}",
+				//"${workspaceFolder}/*.cpp",
+				//"${workspaceFolder}\\*.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "c:\\SysGCC\\raspberry\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: c:\\SysGCC\\raspberry\\bin\\arm-linux-gnueabihf-g++.exe"
+		}
+	]
+}
