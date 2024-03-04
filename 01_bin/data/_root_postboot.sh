@@ -14,8 +14,8 @@ if [[ -f /data/valetudo ]]; then
         VALETUDO_CONFIG_PATH=/data/valetudo_config.json /data/valetudo > /dev/null 2>&1 &
 fi
 
-if [[ -f /data/DobbySpeak_v008 ]]; then
+if [[ -f /data/DobbySpeak_v010 ]]; then
 	sleep 60
-        /data/DobbySpeak_v008 &> /tmp/dobbyspeak.log &
+        /data/DobbySpeak_v010 &> /tmp/dobbyspeak.log &
 fi
 
