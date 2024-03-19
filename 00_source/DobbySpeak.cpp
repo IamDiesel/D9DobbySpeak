@@ -6,8 +6,6 @@
 #define __VERSION_DOB__ "0.1.0"
 using namespace std;
 
-//TODO do not play sound when dobby is docked
-
 
 #ifdef _WIN32
 int main()
@@ -23,7 +21,7 @@ int main()
     //sParser->addLine("read(19, \"\\x3c\\x07\\x00\\x00\\x00\\xa7\\x0c\\x01\\x00\\x00\\x89\\x4b\\x3e\", 1024) = 22");
 
     FILE* fp;
-    cout << fopen_s(&fp, "C:\\Users\\Dogma\\PycharmProjects\\SVN_D9MCU_Parser\\straceOutputStrSize128", "r") << endl;
+    cout << fopen_s(&fp, "D:\\DobbySpeakGIT\\D9DobbySpeak\\02_doc\\straceOutputStrSize128", "r") << endl;
     ifstream file(fp);
 
     if (file.is_open())

@@ -15,11 +15,10 @@
 				"${fileDirname}\\StraceMessageParser.cpp",
 				"${fileDirname}\\TriggerMessage.cpp",
 				"${fileDirname}\\WAVPlayer.cpp",
-				//"${file}",
-				//"${workspaceFolder}/*.cpp",
-				//"${workspaceFolder}\\*.cpp",
+				"${fileDirname}\\Configuration.cpp",
+				"-I${fileDirname}/",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}"
+				"${fileDirname}\\..\\01_bin\\data\\${fileBasenameNoExtension}"
 			],
 			"options": {
 				"cwd": "c:\\SysGCC\\raspberry\\bin"

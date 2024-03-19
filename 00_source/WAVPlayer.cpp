@@ -118,7 +118,11 @@ void WavPlayer::playSoundfileByCategory(short sf_cat)
             const std::time_t t_c = std::chrono::system_clock::to_time_t(now);
 
             string cmd = "aplay  " + it->first + " &";
+#ifdef _WIN32
+            cout << "Playing soundfile: [" << cmd << "]" << endl;
+#else
             cout << std::ctime(&t_c) << "Playing soundfile: [" << cmd << "]" << endl;
+#endif
             std::chrono::time_point<std::chrono::steady_clock> timeBeforeCMD;
             timeBeforeCMD = chrono::steady_clock::now();
             cout << runShellCmdAndGetOutput(cmd) << endl;
