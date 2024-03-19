@@ -1,5 +1,5 @@
 # D9DobbySpeak
-Play sounds when cleaning robot hits obstacle or is lifted from the ground. Compatible with Dreame D9.
+Play individual soundfiles when cleaning robot hits obstacle or is lifted from the ground. Compatible with Dreame D9.
 ![image](https://github.com/IamDiesel/D9DobbySpeak/assets/12062956/be1a5115-e55b-4807-a842-c9a36ef5abc2)
 
 
@@ -7,13 +7,15 @@ Play sounds when cleaning robot hits obstacle or is lifted from the ground. Comp
 ## Preparation
 Dreame D9 must be rooted. See https://valetudo.cloud/ for details. Credits to the valetudo team and their amazing work.
 
-## A) Build binaries on windows
+## A) Build binaries on windows (optional)
 1) Download and install raspberry-gcc6.3.0-r5.exe (448 MB) from https://gnutoolchains.com/raspberry/
 2) Install Visual Studio Code
 3) Install the C/C++ extension for VS Code https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
-4) Configure VS Code: Terminal --> Configure Default Build Task --> Choose compiler : Select arm-linux-gnueabihf-g++.exe
-5) Edit Tasks.json : "c:\\SysGCC\\raspberry\\bin\\arm-linux-gnueabihf-g++.exe" must be the path to the compiler that was installed via gnutoolchains
-   ```yaml
+4) Open VS Code
+5) Click "File" -> "Open Folder" -> Select "00_source" folder from this repo
+6) Click "Run" -> "Add Configuration" --> "C++ Windows"
+7) Copy "tasks.json" from "00_source" to folder ".vscode" within the current VS Code Folder. Content should be:
+    ```
     {
         "version": "2.0.0",
         "tasks": [
@@ -31,11 +33,9 @@ Dreame D9 must be rooted. See https://valetudo.cloud/ for details. Credits to th
                     "${fileDirname}\\StraceMessageParser.cpp",
                     "${fileDirname}\\TriggerMessage.cpp",
                     "${fileDirname}\\WAVPlayer.cpp",
-                    //"${file}",
-                    //"${workspaceFolder}/*.cpp",
-                    //"${workspaceFolder}\\*.cpp",
+                     "${fileDirname}\\Configuration.cpp",
                     "-o",
-                    "${fileDirname}\\${fileBasenameNoExtension}"
+                    "${fileDirname}\\..\\01_bin\\data\\${fileBasenameNoExtension}"
                 ],
                 "options": {
                     "cwd": "c:\\SysGCC\\raspberry\\bin"
@@ -51,8 +51,10 @@ Dreame D9 must be rooted. See https://valetudo.cloud/ for details. Credits to th
             }
         ]
     }
-7) In VS Code open DobbySpeak.cpp and select "Run build task"
-8) Additionally strace for arm is needed which is not part of this source code. E.g. strace arm can be found here: https://archlinuxarm.org/packages/aarch64/strace
+   ```
+8) Click on "Terminal" -> "Configure Default Build Task" --> Select "C/C++: arm-linux-gnueabihf-g++.exe..."
+9) In VS Code open DobbySpeak.cpp and select "Run build task". The binary will generated under "01_bin/data/DobbySpeak" (without a trailing version number).
+10) Additionally strace for arm is needed which is not part of this source code. E.g. strace arm can be found here: https://archlinuxarm.org/packages/aarch64/strace
 
 ## B) Transfer binaries & run DobbySpeak
 * Transfer files (e.g. via WinScp) to robot
