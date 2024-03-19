@@ -12,8 +12,9 @@ Dreame D9 must be rooted. See https://valetudo.cloud/ for details. Credits to th
 2) Install Visual Studio Code
 3) Install the C/C++ extension for VS Code https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 4) Open VS Code
-5) Click "Run" -> "Add Configuration" --> "C++ Windows"
-6) Copy "tasks.json" from "00_source" to folder ".vscode" within the current VS Code Folder. Content must be:
+5) Click "File" -> "Open Folder" -> Select "00_source" folder from this repo
+6) Click "Run" -> "Add Configuration" --> "C++ Windows"
+7) Copy "tasks.json" from "00_source" to folder ".vscode" within the current VS Code Folder. Content should be:
     ```
     {
         "version": "2.0.0",
@@ -51,9 +52,9 @@ Dreame D9 must be rooted. See https://valetudo.cloud/ for details. Credits to th
         ]
     }
    ```
-7) Click on "Terminal" -> "Configure Default Build Task" --> Select "C/C++: arm-linux-gnueabihf-g++.exe..."
-8) In VS Code open DobbySpeak.cpp and select "Run build task". The binary will generated under "01_bin/data/DobbySpeak" (without a trailing version number).
-9) Additionally strace for arm is needed which is not part of this source code. E.g. strace arm can be found here: https://archlinuxarm.org/packages/aarch64/strace
+8) Click on "Terminal" -> "Configure Default Build Task" --> Select "C/C++: arm-linux-gnueabihf-g++.exe..."
+9) In VS Code open DobbySpeak.cpp and select "Run build task". The binary will generated under "01_bin/data/DobbySpeak" (without a trailing version number).
+10) Additionally strace for arm is needed which is not part of this source code. E.g. strace arm can be found here: https://archlinuxarm.org/packages/aarch64/strace
 
 ## B) Transfer binaries & run DobbySpeak
 * Transfer files (e.g. via WinScp) to robot
